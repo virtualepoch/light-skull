@@ -1,10 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
 #canvas1 {
-  width: 800px;
-  height: 500px;
-  border: 1px solid black;
+  border: 1px solid rgb(134, 134, 134);
   background: black;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
+}
+.controller {
+  display: flex;
+  justify-content: space-between;
+  height: 110px;
+  width: 350px;
+  background: url(/images/pexels-kristina-paukshtite-640p.jpg);
+  background-size: 100% 100%;
+  margin: 0 auto;
+  border: 1px solid rgb(143, 143, 207);
+  border-radius: 10px;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+}
+.x-pad{
+  height: 70px;
+  width: 70px;
+  background: url(/images/x-pad.png);
+  background-size: 100% 100%;
+  background-color: inherit;
+  border-radius: 50%;
+  margin: 20px;
+}
+.button-1{
+  height: 30px;
+  width: 30px;
+  background:url(/images/gameboy-button.png);
+  background-size: 100% 100%;
+  margin: 40px;
 }
