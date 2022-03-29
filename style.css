@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: white;
 }
 body {
   width: 100vw;
@@ -43,12 +44,12 @@ body {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-@media (min-width:600px) {
-  .controller{
+@media (min-width: 600px) {
+  .controller {
     padding: 70px;
   }
 }
-.x-pad {
+#x-pad {
   height: 150px;
   width: 150px;
   background: url(/images/x-pad.png);
@@ -56,6 +57,46 @@ body {
   background-color: inherit;
   border-radius: 50%;
   margin: 40px 30px;
+}
+#x-pad.clicked {
+  transform: scale(0.7);
+}
+#x-pad-up {
+  background: rgb(255, 0, 0, 0.3);
+  height: 75px;
+  width: 150px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+#x-pad-down {
+  background: rgba(47, 0, 255, 0.3);
+  height: 75px;
+  width: 150px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  cursor: pointer;
+}
+#x-pad-left {
+  background: rgba(9, 255, 0, 0.3);
+  height: 75px;
+  width: 150px;
+  position: relative;
+  top: -112.5px;
+  left: -37.5px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+#x-pad-right {
+  background: rgba(0, 255, 255, 0.3);
+  height: 75px;
+  width: 150px;
+  position: relative;
+  top: -187.5px;
+  left: 37.5px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: rotate(270deg);
   cursor: pointer;
 }
 .button-1 {

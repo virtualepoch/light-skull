@@ -36,7 +36,7 @@ window.addEventListener("keyup", function (e) {
 });
 
 function movePlayer() {
-  if (keys["ArrowUp"] && player.y > 85) {
+  if (keys["ArrowUp"] && player.y > 100) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
@@ -58,17 +58,43 @@ function movePlayer() {
   }
 }
 
+// MOVEMENT FUNCTIONS FOR X-PAD///////////////////////////////////////////
+
+// const arrowUp = document.getElementById("x-pad-up");
+// arrowUp.addEventListener("mousedown", movePlayerUpMobile());
+
 function movePlayerUpMobile() {
-  if (player.y > 85) {
+  if (player.y > 100) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
   }
 }
-
+function movePlayerDownMobile() {
+  if (player.y < canvas.height - player.height) {
+    player.y += player.speed;
+    player.frameY = 0;
+    player.moving = true;
+  }
+}
+function movePlayerLeftMobile(){
+  if (player.x > 0) {
+    player.x -= player.speed;
+    player.frameY = 1;
+    player.moving = true;
+  }
+}
+function movePlayerRightMobile(){
+  if (player.x < canvas.width - player.width) {
+    player.x += player.speed;
+    player.frameY = 2;
+    player.moving = true;
+  }
+}
 function stopMovingMobile() {
   player.moving = false;
 }
+//////////////////////////////////////////////////////////////////////////
 
 function handlePlayerFrame() {
   if (player.frameX < 3 && player.moving) player.frameX++;
