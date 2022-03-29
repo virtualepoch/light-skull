@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = 350;
-canvas.height = canvas.width*0.7;
+canvas.height = 350;
 
 const keys = [];
 
@@ -89,4 +89,4 @@ function animate() {
     handlePlayerFrame();
   }
 }
-startAnimating(30);
+startAnimating(20);
