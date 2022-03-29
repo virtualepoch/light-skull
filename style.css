@@ -35,11 +35,7 @@ body {
   border-top-left-radius: 20%;
   border-top-right-radius: 20%;
 }
-@media (max-width:600px) {
-  .controller{
-    display:none;
-  }
-}
+
 .x-pad{
   height: 120px;
   width: 120px;
