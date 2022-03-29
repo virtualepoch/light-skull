@@ -1,43 +1,43 @@
 {
-    "short_name": "LS",
-    "name": "Light Skull",
-    "icons": [
-      {
-        "src": "/images/light-skull-sticker-512-edit.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      },
-      {
-        "src": "/images/light-skull-sticker-192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      }
-    ],
-    "start_url": "index.html",
-    "background_color": "black",
-    "display": "standalone",
-    "scope": "/",
-    "theme_color": "black",
-    "shortcuts": [
-      {
-        "name": "Level 2",
-        "short_name": "L2",
-        "description": "Into the Abyss",
-        "url": "/",
-        "icons": [{ "src": "/", "sizes": "192x192" }]
-      }
-    ],
-    "description": "isometric action/adventure game",
-    "screenshots": [
-      {
-        "src": "/images/light-skull-screenshot1.png",
-        "type": "image/png",
-        "sizes": "540x720"
-      },
-      {
-        "src": "/images/screenshot2.jpg",
-        "type": "image/jpg",
-        "sizes": "540x720"
-      }
-    ]
-  }
+  "short_name": "Light Skull",
+  "name": "Light Skull",
+  "icons": [
+    {
+      "src": "/images/light-skull-sticker-512-edit.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/images/light-skull-sticker-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "rgb(0,0,0)",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "rgb(0,0,0)",
+  "shortcuts": [
+    {
+      "name": "Level 2",
+      "short_name": "L2",
+      "description": "Into the Abyss",
+      "url": "/",
+      "icons": [{ "src": "/", "sizes": "192x192" }]
+    }
+  ],
+  "description": "isometric action/adventure game",
+  "screenshots": [
+    {
+      "src": "/images/light-skull-screenshot1.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "/images/screenshot2.jpg",
+      "type": "image/jpg",
+      "sizes": "540x720"
+    }
+  ]
+}
