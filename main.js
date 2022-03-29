@@ -1,13 +1,13 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
-canvas.width = 400;
-canvas.height = 400;
+canvas.width = 350;
+canvas.height = canvas.width*0.7;
 
 const keys = [];
 
 const player = {
   x: 200,
-  y: 300,
+  y: 100,
   width: 32,
   height: 48,
   frameX: 0,
@@ -35,7 +35,7 @@ window.addEventListener("keyup", function (e) {
 });
 
 function movePlayer() {
-  if (keys["ArrowUp"] && player.y > 110) {
+  if (keys["ArrowUp"] && player.y > 50) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
