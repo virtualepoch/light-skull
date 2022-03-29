@@ -35,7 +35,7 @@ window.addEventListener("keyup", function (e) {
 });
 
 function movePlayer() {
-  if (keys["ArrowUp"] && player.y > 50) {
+  if (keys["ArrowUp"] && player.y > 85) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
@@ -90,3 +90,4 @@ function animate() {
   }
 }
 startAnimating(20);
+
