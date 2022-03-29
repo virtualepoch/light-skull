@@ -1,13 +1,13 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
-canvas.width = 350;
-canvas.height = 350;
+canvas.width = 500;
+canvas.height = 400;
 
 const keys = [];
 
 const player = {
-  x: 200,
-  y: 100,
+  x: 226,
+  y: 350,
   width: 32,
   height: 48,
   frameX: 0,
@@ -26,6 +26,7 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
 }
 
 window.addEventListener("keydown", function (e) {
+  console.log(keys);
   keys[e.key] = true;
   player.moving = true;
 });
@@ -57,16 +58,22 @@ function movePlayer() {
   }
 }
 
+function movePlayerUpMobile() {
+  if (player.y > 85) {
+    player.y -= player.speed;
+    player.frameY = 3;
+    player.moving = true;
+  }
+}
+
+function stopMovingMobile() {
+  player.moving = false;
+}
+
 function handlePlayerFrame() {
   if (player.frameX < 3 && player.moving) player.frameX++;
   else player.frameX = 0;
 }
-
-// function animate() {
-//
-//   requestAnimationFrame(animate);
-// }
-// animate();
 
 let fps, fpsInterval, startTime, now, then, elapsed;
 
@@ -90,4 +97,3 @@ function animate() {
   }
 }
 startAnimating(20);
-
