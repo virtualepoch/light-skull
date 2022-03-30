@@ -7,23 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="/webmanifest.json">
-    <title>Light Skull - PWA Game</title>
+    <title>Light Skull - PWA Isometric 2D Game</title>
 </head>
 
 <body>
-    
-        <canvas id="canvas1"></canvas>
 
-        <div class="controller">
-            <div id="x-pad">
-            <div id="x-pad-up" onclick="" onmousedown="movePlayerUpMobile(), buttonAnim()" onmouseup="stopMovingMobile()"></div>
+    <canvas id="canvas1"></canvas>
+
+    <div class="controller">
+        <div id="x-pad">
+            <div id="x-pad-up"></div>
             <div id="x-pad-down" onmousedown="movePlayerDownMobile()" onmouseup="stopMovingMobile()"></div>
             <div id="x-pad-left" onmousedown="movePlayerLeftMobile()" onmouseup="stopMovingMobile()"></div>
             <div id="x-pad-right" onmousedown="movePlayerRightMobile()" onmouseup="stopMovingMobile()"></div>
-            </div>
-            <div class="button-1" onclick="jump()"></div>
         </div>
-    
+        <div class="button-1" onclick="jump()"></div>
+    </div>
+
     <script src="main.js"></script>
     <script src="test.js"></script>
 

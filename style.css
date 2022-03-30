@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: white;
+  -webkit-tap-highlight-color: rgb(255, 255, 255, 0.5);
 }
 body {
   width: 100vw;
@@ -57,9 +57,6 @@ body {
   background-color: inherit;
   border-radius: 50%;
   margin: 40px 30px;
-}
-#x-pad.clicked {
-  transform: scale(0.7);
 }
 #x-pad-up {
   background: rgb(255, 0, 0, 0.3);

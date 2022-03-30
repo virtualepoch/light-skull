@@ -36,65 +36,27 @@ window.addEventListener("keyup", function (e) {
 });
 
 function movePlayer() {
-  if (keys["ArrowUp"] && player.y > 100) {
+  if ((keys["ArrowUp"] && player.y > 100) || (keys["w"] && player.y > 100)) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
   }
-  if (keys["ArrowDown"] && player.y < canvas.height - player.height) {
+  if ((keys["ArrowDown"] && player.y < canvas.height - player.height - 2) || (keys["s"] && player.y < canvas.height - player.height - 2)) {
     player.y += player.speed;
     player.frameY = 0;
     player.moving = true;
   }
-  if (keys["ArrowLeft"] && player.x > 0) {
+  if ((keys["ArrowLeft"] && player.x > 1) || (keys["a"] && player.x > 1)) {
     player.x -= player.speed;
     player.frameY = 1;
     player.moving = true;
   }
-  if (keys["ArrowRight"] && player.x < canvas.width - player.width) {
+  if ((keys["ArrowRight"] && player.x < canvas.width - player.width) || (keys["d"] && player.x < canvas.width - player.width)) {
     player.x += player.speed;
     player.frameY = 2;
     player.moving = true;
   }
 }
-
-// MOVEMENT FUNCTIONS FOR X-PAD///////////////////////////////////////////
-
-// const arrowUp = document.getElementById("x-pad-up");
-// arrowUp.addEventListener("mousedown", movePlayerUpMobile());
-
-function movePlayerUpMobile() {
-  if (player.y > 100) {
-    player.y -= player.speed;
-    player.frameY = 3;
-    player.moving = true;
-  }
-}
-function movePlayerDownMobile() {
-  if (player.y < canvas.height - player.height) {
-    player.y += player.speed;
-    player.frameY = 0;
-    player.moving = true;
-  }
-}
-function movePlayerLeftMobile(){
-  if (player.x > 0) {
-    player.x -= player.speed;
-    player.frameY = 1;
-    player.moving = true;
-  }
-}
-function movePlayerRightMobile(){
-  if (player.x < canvas.width - player.width) {
-    player.x += player.speed;
-    player.frameY = 2;
-    player.moving = true;
-  }
-}
-function stopMovingMobile() {
-  player.moving = false;
-}
-//////////////////////////////////////////////////////////////////////////
 
 function handlePlayerFrame() {
   if (player.frameX < 3 && player.moving) player.frameX++;
