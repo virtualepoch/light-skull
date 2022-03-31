@@ -7,7 +7,7 @@ const keys = [];
 
 const player = {
   x: 226,
-  y: 350,
+  y: 300,
   width: 32,
   height: 48,
   frameX: 0,
@@ -79,13 +79,13 @@ xPadRight.addEventListener("touchend", function () {
 });
 
 function movePlayer() {
-  if ((keys["ArrowUp"] && player.y > 100) || (keys["w"] && player.y > 100) || (xPadUpArray[xPadUp] && player.y > 100)) {
+  if ((keys["ArrowUp"] && player.y > 60) || (keys["w"] && player.y > 60) || (xPadUpArray[xPadUp] && player.y > 60)) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
   }
 
-  if ((keys["ArrowDown"] && player.y < canvas.height - player.height - 2) || (keys["s"] && player.y < canvas.height - player.height - 2) || (xPadDownArray[xPadDown] && player.y < canvas.height - player.height - 2)) {
+  if ((keys["ArrowDown"] && player.y < canvas.height - player.height * 2 - 10) || (keys["s"] && player.y < canvas.height - player.height * 2 - 10) || (xPadDownArray[xPadDown] && player.y < canvas.height - player.height * 2 - 10)) {
     player.y += player.speed;
     player.frameY = 0;
     player.moving = true;
@@ -95,7 +95,7 @@ function movePlayer() {
     player.frameY = 1;
     player.moving = true;
   }
-  if ((keys["ArrowRight"] && player.x < canvas.width - player.width) || (keys["d"] && player.x < canvas.width - player.width) || (xPadRightArray[xPadRight] && player.x < canvas.width - player.width)) {
+  if ((keys["ArrowRight"] && player.x < canvas.width - player.width * 2 - 5) || (keys["d"] && player.x < canvas.width - player.width * 2 - 5) || (xPadRightArray[xPadRight] && player.x < canvas.width - player.width * 2 - 5)) {
     player.x += player.speed;
     player.frameY = 2;
     player.moving = true;
@@ -123,7 +123,7 @@ function animate() {
     then = now - (elapsed % fpsInterval);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-    drawSprite(playerSprite, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x, player.y, player.width, player.height);
+    drawSprite(playerSprite, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x, player.y, player.width * 2, player.height * 2);
     movePlayer();
     handlePlayerFrame();
   }

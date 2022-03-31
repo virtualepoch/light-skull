@@ -99,10 +99,10 @@ body {
 .button-1 {
   height: 70px;
   width: 70px;
-    background: url(/images/ratru-liquid-metal-1200p.jpg);
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(/images/ratru-liquid-metal-1200p.jpg);
   background-size: 100% 100%;
   border: 1px solid black;
+  border-bottom: 4px solid rgb(10, 44, 65);
   border-radius: 50%;
-  
   margin: 75px 30px;
 }

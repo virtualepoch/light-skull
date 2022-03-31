@@ -55,10 +55,8 @@
 
 // const buttons = []
 
-
-
 // window.addEventListener("touchstart", e => {
- 
+
 // });
 // window.addEventListener("touchmove", e => {
 //   console.log("moving");
@@ -67,17 +65,15 @@
 //   console.log("end");
 // });
 
-
-
 function movePlayerUpMobile() {
-  if (player.y > 100) {
+  if (player.y > 60) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
   }
 }
 function movePlayerDownMobile() {
-  if (player.y < canvas.height - player.height - 2) {
+  if (player.y < canvas.height - player.height * 2 - 10) {
     player.y += player.speed;
     player.frameY = 0;
     player.moving = true;
@@ -91,7 +87,7 @@ function movePlayerLeftMobile() {
   }
 }
 function movePlayerRightMobile() {
-  if (player.x < canvas.width - player.width) {
+  if (player.x < canvas.width - player.width * 2 - 5) {
     player.x += player.speed;
     player.frameY = 2;
     player.moving = true;
