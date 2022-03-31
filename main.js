@@ -25,9 +25,14 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
   ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
 }
 
-const buttons = [];
+const xPadUpArray = [];
+const xPadDownArray = [];
+const xPadLeftArray = [];
+const xPadRightArray = [];
 const xPadUp = document.getElementById("x-pad-up");
 const xPadDown = document.getElementById("x-pad-down");
+const xPadLeft = document.getElementById("x-pad-left");
+const xPadRight = document.getElementById("x-pad-right");
 
 window.addEventListener("keydown", function (e) {
   keys[e.key] = true;
@@ -37,45 +42,60 @@ window.addEventListener("keyup", function (e) {
   player.moving = false;
 });
 
-xPadUp.addEventListener("touchstart", function() {
-  buttons[xPadUp] = true;
-  console.log(buttons)
-  
+xPadUp.addEventListener("touchstart", function () {
+  xPadUpArray[xPadUp] = true;
+  console.log(buttons);
 });
-xPadUp.addEventListener("touchend", function() {
-  delete buttons[xPadUp];
+xPadUp.addEventListener("touchend", function () {
+  delete xPadUpArray[xPadUp];
   player.moving = false;
 });
 
-// xPadDown.addEventListener("touchstart", function () {
-//   buttons[xPadDown] = true;
-//   console.log(buttons)
-  
-// });
-// xPadDown.addEventListener("touchend", function () {
-//   delete buttons[xPadDown];
-//   player.moving = false;
-// });
+xPadDown.addEventListener("touchstart", function () {
+  xPadDownArray[xPadDown] = true;
+  console.log(buttons);
+});
+xPadDown.addEventListener("touchend", function () {
+  delete xPadDownArray[xPadDown];
+  player.moving = false;
+});
 
+xPadLeft.addEventListener("touchstart", function () {
+  xPadLeftArray[xPadLeft] = true;
+  console.log(buttons);
+});
+xPadLeft.addEventListener("touchend", function () {
+  delete xPadLeftArray[xPadLeft];
+  player.moving = false;
+});
+
+xPadRight.addEventListener("touchstart", function () {
+  xPadRightArray[xPadRight] = true;
+  console.log(buttons);
+});
+xPadRight.addEventListener("touchend", function () {
+  delete xPadRightArray[xPadRight];
+  player.moving = false;
+});
 
 function movePlayer() {
-  if ((keys["ArrowUp"] && player.y > 100) || (keys["w"] && player.y > 100) || (buttons[xPadUp] && player.y > 100)) {
+  if ((keys["ArrowUp"] && player.y > 100) || (keys["w"] && player.y > 100) || (xPadUpArray[xPadUp] && player.y > 100)) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
   }
- 
-  if ((keys["ArrowDown"] && player.y < canvas.height - player.height - 2) || (keys["s"] && player.y < canvas.height - player.height - 2)) {
+
+  if ((keys["ArrowDown"] && player.y < canvas.height - player.height - 2) || (keys["s"] && player.y < canvas.height - player.height - 2) || (xPadDownArray[xPadDown] && player.y < canvas.height - player.height - 2)) {
     player.y += player.speed;
     player.frameY = 0;
     player.moving = true;
   }
-  if ((keys["ArrowLeft"] && player.x > 1) || (keys["a"] && player.x > 1)) {
+  if ((keys["ArrowLeft"] && player.x > 1) || (keys["a"] && player.x > 1) || (xPadLeftArray[xPadLeft] && player.x > 1)) {
     player.x -= player.speed;
     player.frameY = 1;
     player.moving = true;
   }
-  if ((keys["ArrowRight"] && player.x < canvas.width - player.width) || (keys["d"] && player.x < canvas.width - player.width)) {
+  if ((keys["ArrowRight"] && player.x < canvas.width - player.width) || (keys["d"] && player.x < canvas.width - player.width) || (xPadRightArray[xPadRight] && player.x < canvas.width - player.width)) {
     player.x += player.speed;
     player.frameY = 2;
     player.moving = true;
