@@ -25,22 +25,36 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
   ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
 }
 
+const buttons = [];
+const xPadUp = document.getElementById("x-pad-up");
+const xPadDown = document.getElementById("x-pad-down");
+
 window.addEventListener("keydown", function (e) {
-  console.log(keys);
   keys[e.key] = true;
-  player.moving = true;
 });
 window.addEventListener("keyup", function (e) {
   delete keys[e.key];
   player.moving = false;
 });
 
+xPadUp.addEventListener("touchstart", function () {
+  buttons[xPadUp] = true;
+  console.log(buttons)
+  
+});
+xPadUp.addEventListener("touchend", function () {
+  delete buttons[xPadUp];
+  player.moving = false;
+});
+
+
 function movePlayer() {
-  if ((keys["ArrowUp"] && player.y > 100) || (keys["w"] && player.y > 100)) {
+  if ((keys["ArrowUp"] && player.y > 100) || (keys["w"] && player.y > 100) || (buttons[xPadUp] && player.y > 100)) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
   }
+ 
   if ((keys["ArrowDown"] && player.y < canvas.height - player.height - 2) || (keys["s"] && player.y < canvas.height - player.height - 2)) {
     player.y += player.speed;
     player.frameY = 0;
