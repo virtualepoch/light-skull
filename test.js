@@ -69,13 +69,13 @@
 
 
 
-// function movePlayerUpMobile() {
-//   if (player.y > 100) {
-//     player.y -= player.speed;
-//     player.frameY = 3;
-//     player.moving = true;
-//   }
-// }
+function movePlayerUpMobile() {
+  if (player.y > 100) {
+    player.y -= player.speed;
+    player.frameY = 3;
+    player.moving = true;
+  }
+}
 function movePlayerDownMobile() {
   if (player.y < canvas.height - player.height - 2) {
     player.y += player.speed;

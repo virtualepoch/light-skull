@@ -99,10 +99,10 @@ body {
 .button-1 {
   height: 70px;
   width: 70px;
-  background: url(/images/gameboy-button.png);
+    background: url(/images/ratru-liquid-metal-1200p.jpg);
   background-size: 100% 100%;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 50%;
-  box-shadow: 0 3px 4px 1px black;
-  margin: 65px 30px;
+  
+  margin: 75px 30px;
 }

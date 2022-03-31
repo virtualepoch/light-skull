@@ -37,15 +37,25 @@ window.addEventListener("keyup", function (e) {
   player.moving = false;
 });
 
-xPadUp.addEventListener("touchstart", function () {
+xPadUp.addEventListener("touchstart", function() {
   buttons[xPadUp] = true;
   console.log(buttons)
   
 });
-xPadUp.addEventListener("touchend", function () {
+xPadUp.addEventListener("touchend", function() {
   delete buttons[xPadUp];
   player.moving = false;
 });
+
+// xPadDown.addEventListener("touchstart", function () {
+//   buttons[xPadDown] = true;
+//   console.log(buttons)
+  
+// });
+// xPadDown.addEventListener("touchend", function () {
+//   delete buttons[xPadDown];
+//   player.moving = false;
+// });
 
 
 function movePlayer() {
