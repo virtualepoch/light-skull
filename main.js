@@ -17,7 +17,7 @@ const player = {
 };
 
 const playerSprite = new Image();
-playerSprite.src = "images/protocoldroid2.png";
+playerSprite.src = "images/light-skull-sprite-1.png";
 const background = new Image();
 background.src = "images/cityscape07edit.jpg";
 
