@@ -3,7 +3,7 @@
   "name": "Light Skull",
   "icons": [
     {
-      "src": "/images/light-skull-sticker-512-edit.png",
+      "src": "/images/light-skull-sticker-512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
