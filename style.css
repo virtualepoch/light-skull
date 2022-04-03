@@ -28,6 +28,35 @@ body {
     max-width: 1600px;
   }
 }
+#enemy-1 {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  height: 200px;
+  width: 200px;
+  transform: rotateY(180deg);
+  background: url(/images/skeleton-fly-spritesheet-200.png);
+  animation: run 1s steps(11) infinite;
+}
+@keyframes run {
+  100% {
+    background-position: -2224px, 0;
+  }
+}
+#enemy-2 {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  background: url(/images/skeleton-fly-spritesheet-100.png);
+  animation: run2 1s steps(11) infinite;
+}
+@keyframes run2 {
+  100% {
+    background-position: -1112px, 0;
+  }
+}
 .controller {
   display: flex;
   justify-content: space-between;
